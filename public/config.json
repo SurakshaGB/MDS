@@ -39,7 +39,7 @@
     
     "configurationArguments":
     {
-        "applicationExtensionKey": "53b3ef0c-34c8-47a2-915d-280ce22d2099",
+        "applicationExtensionKey": "e73a58f7-404a-4ac3-9484-fd13b2584434",
         "save":
         {
             "url": "https://mds-heroku.herokuapp.com/journeybuilder/save",
