@@ -4,7 +4,7 @@
     {
         "icon": "images/icon.png",
         "iconSmall": "images/iconSmall.png",
-        "category": "<CATEGORY_OF_APP_BASED_ON_DOCS>"
+        "category": "test"
     },
 
     "type": "REST",
@@ -23,7 +23,7 @@
         {
             "inArguments": [
               { 
-                "SAMPLE_PARAM": "SAMPLE PARAM DATA FROM CONFIG.JSON"
+                
               }
             ],
             "outArguments": [],
