@@ -85,6 +85,11 @@ define(['postmonger'], function (Postmonger) {
                 }
             });
         });
+        connection.trigger('updateButton', {
+            button: 'next',
+            text: 'done',
+            visible: true
+        });
     };
 
 
