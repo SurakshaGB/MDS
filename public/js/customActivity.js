@@ -46,10 +46,10 @@ define(['postmonger'], function (Postmonger) {
      * The config.json will be updated here if there are any updates to be done via Front End UI
      */
     function save() {
-        payload['arguments'].execute.inArguments = [
-            {
-            }
-        ];
+        //payload['arguments'].execute.inArguments = [
+           // {
+           // }
+        //];
         payload['metaData'].isConfigured = true;
         console.log(payload);
         connection.trigger('updateActivity', payload);
