@@ -51,6 +51,7 @@ define(['postmonger'], function (Postmonger) {
             }
         ];
         payload['metaData'].isConfigured = true;
+        console.log(payload);
         connection.trigger('updateActivity', payload);
     }
 
@@ -75,16 +76,11 @@ define(['postmonger'], function (Postmonger) {
             ? payload['arguments'].execute.inArguments
             : {};
     
-        $.each(inArguments, function (index, inArgument) {
-            $.each(inArgument, function (key, value) {
-                const $el = $('#' + key);
-                if($el.attr('type') === 'checkbox') {
-                    $el.prop('checked', value === 'true');
-                } else {
-                    $el.val(value);
-                }
+            $.each(inArguments, function (index, inArgument) {
+                $.each(inArgument, function (key, val) {
+                    $('#'+key).val(val);  
+                });
             });
-        });
         connection.trigger('updateButton', {
             button: 'next',
             text: 'done',

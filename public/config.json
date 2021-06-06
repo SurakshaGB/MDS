@@ -17,6 +17,20 @@
             "step1Label": "Configure Activity"
         }
     },
+    "arguments": {
+        "execute": {
+            "inArguments": [], 
+            "outArguments": [], 
+            "url": "https://mds-heroku.herokuapp.com/journeybuilder/execute",
+            "verb": "POST",
+            "body": "", 
+            "header": "", 
+            "format": "json",
+            "useJwt": true,
+            "timeout": 10000
+        }
+    
+    },
     "configurationArguments":
     {
         "applicationExtensionKey": "e73a58f7-404a-4ac3-9484-fd13b2584434",
