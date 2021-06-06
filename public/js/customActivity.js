@@ -38,7 +38,7 @@ define(['postmonger'], function (Postmonger) {
             payload = data;
         }
         initialLoad(data);
-        parseEventSchema();
+        //parseEventSchema();
     }
 
     /**
@@ -48,7 +48,7 @@ define(['postmonger'], function (Postmonger) {
     function save() {
         payload['arguments'].execute.inArguments = [
             {
-                SAMPLE_PARAM: "SAMPLE PARAM DATA FROM CONFIG.JSON"
+                "contactKey": "{{Contact.Key}}"
             }
         ];
         payload['metaData'].isConfigured = true;
@@ -65,6 +65,27 @@ define(['postmonger'], function (Postmonger) {
      * e.g. input fields, select lists
      */
     function initialLoad(data) {
+        const hasInArguments = Boolean(
+            payload['arguments'] &&
+            payload['arguments'].execute &&
+            payload['arguments'].execute.inArguments &&
+            payload['arguments'].execute.inArguments.length > 0
+        );
+    
+        const inArguments = hasInArguments
+            ? payload['arguments'].execute.inArguments
+            : {};
+    
+        $.each(inArguments, function (index, inArgument) {
+            $.each(inArgument, function (key, value) {
+                const $el = $('#' + key);
+                if($el.attr('type') === 'checkbox') {
+                    $el.prop('checked', value === 'true');
+                } else {
+                    $el.val(value);
+                }
+            });
+        });
     };
 
 
