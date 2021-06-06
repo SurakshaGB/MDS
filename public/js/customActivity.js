@@ -48,7 +48,6 @@ define(['postmonger'], function (Postmonger) {
     function save() {
         payload['arguments'].execute.inArguments = [
             {
-                "contactKey": "{{Contact.Key}}"
             }
         ];
         payload['metaData'].isConfigured = true;
