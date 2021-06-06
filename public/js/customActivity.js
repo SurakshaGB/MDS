@@ -65,6 +65,7 @@ define(['postmonger'], function (Postmonger) {
      * e.g. input fields, select lists
      */
     function initialLoad(data) {
+        console.log('test123');
         const hasInArguments = Boolean(
             payload['arguments'] &&
             payload['arguments'].execute &&
