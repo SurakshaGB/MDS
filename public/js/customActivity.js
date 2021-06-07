@@ -64,30 +64,7 @@ define(['postmonger'], function (Postmonger) {
      * If there are information present, it should be loaded back into the appropriate places. 
      * e.g. input fields, select lists
      */
-    function initialLoad(data) {
-        console.log('test123');
-        const hasInArguments = Boolean(
-            payload['arguments'] &&
-            payload['arguments'].execute &&
-            payload['arguments'].execute.inArguments &&
-            payload['arguments'].execute.inArguments.length > 0
-        );
-    
-        const inArguments = hasInArguments
-            ? payload['arguments'].execute.inArguments
-            : {};
-    
-            $.each(inArguments, function (index, inArgument) {
-                $.each(inArgument, function (key, val) {
-                    $('#'+key).val(val);  
-                });
-            });
-        connection.trigger('updateButton', {
-            button: 'next',
-            text: 'done',
-            visible: true
-        });
-    };
+    function initialLoad(data) {};
 
 
     /**
